@@ -2,8 +2,8 @@
 
 {% block content %}
 
-    
-    <header class="masthead" style="background-image:url('static/blog/assets/img/home-bg.jpg');">
+    {% load static %}
+    <header class="masthead" style="background-image:url({% static 'blog/assets/img/home-bg.jpg' %});">
         <div class="overlay"></div>
         <div class="container">
             <div class="row">
