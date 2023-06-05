@@ -13,3 +13,8 @@ class PostList(generic.ListView):
 class PostDetail(generic.DetailView):
     model = Post
     template_name = 'blog/post_detail.html'
+
+class About(generic.TemplateView):
+    # return render(request, 'blog/about.html')
+    template_name = 'blog/about.html'
+    
