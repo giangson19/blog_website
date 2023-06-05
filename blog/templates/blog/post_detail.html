@@ -1,18 +1,30 @@
 {% extends 'blog/base.html' %} 
 
 {% block content %}
-
-<div class="container">
-    <div class="row">
-        <div class="col-md-10 mt-3 left  top">
-            <div class="card-body">
-                <h1>{% block title %} {{ object.title }} {% endblock title %}</h1>
-                <p class=" text-muted">{{ post.author }} | {{ post.created_on }}</p>
-                <p class="card-text ">{{ object.content | safe }}</p>
+    <header class="masthead" style="background-image:url('assets/img/post-bg.jpg');">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10 col-lg-8 mx-auto position-relative">
+                    <div class="post-heading">
+                        <h1>{{ object.title }}</h1>
+                        <!--<h2 class="subheading">Problems look mighty small from 150 miles up</h2>  -->
+                            <span class="meta">Posted by&nbsp;Start Bootstrap&nbsp;on August 24, 2018</span>
+                    </div>
+                </div>
             </div>
         </div>
+    </header>
+    <article>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10 col-lg-8 mx-auto">
+                    {{ object.content | safe }}
+                </div>
+            </div>
+        </div>
+    </article>
 
-    </div>
-</div>
+
 
 {% endblock content %}
