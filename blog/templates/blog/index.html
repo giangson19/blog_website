@@ -9,7 +9,8 @@
             <div class="row">
                 <div class="col-md-10 col-lg-8 mx-auto position-relative">
                     <div class="site-heading">
-                        <h1>Giang Son's Blog</h1><span class="subheading">A Blog Theme by Start Bootstrap</span>
+                        <h1>Giang Son</h1>
+                        <span class="subheading">My Blog</span>
                     </div>
                 </div>
             </div>
@@ -28,7 +29,7 @@
                     </div>
                     <hr>
                 {% endfor %}
-                <div class="clearfix"><button class="btn btn-primary float-end" type="button">See all posts&nbsp;⇒</button></div>
+                <div class="clearfix"><a href = "{% url 'all_posts' %}"><button class="btn btn-primary float-end" type="button">See all posts&nbsp;⇒</button></a></div>
             </div>
         </div>
     </div>
