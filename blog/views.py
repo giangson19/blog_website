@@ -6,13 +6,13 @@ from django.views import generic
 # def home(request):
 #     return render(request, 'blog/home.html')
 
-class LatestPostsList(generic.ListView):
-    queryset = Post.objects.filter(status = 1).order_by('-created_on')[:5]
-    template_name = 'blog/index.html'
+# class LatestPostsList(generic.ListView):
+#     queryset = Post.objects.filter(status = 1).order_by('-created_on')[:5]
+#     template_name = 'blog/index.html'
 
 class AllPostsList(generic.ListView):
     queryset = Post.objects.filter(status = 1).order_by('-created_on')
-    template_name = 'blog/all_posts.html'
+    template_name = 'blog/index.html'
 
 class PostDetail(generic.DetailView):
     model = Post
