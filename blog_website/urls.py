@@ -24,6 +24,7 @@ urlpatterns = [
     path('about/', views.About.as_view(), name = 'about'),    
     path('blog/', include('blog.urls')),    
     path('summernote/', include('django_summernote.urls')),
+    path('tinymce/', include('tinymce.urls')),
 ]
 
 from django.conf import settings
