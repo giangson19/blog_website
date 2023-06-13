@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'blog',
     'django_summernote',
     'tinymce',
+    'django.contrib.postgres',
 ]
 
 MIDDLEWARE = [
@@ -79,8 +80,10 @@ WSGI_APPLICATION = 'blog_website.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'blog',
+        'USER': 'giangson',
+        'PASSWORD': 'Hebe@0207',
     }
 }
 
