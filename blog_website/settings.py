@@ -155,6 +155,7 @@ TINYMCE_DEFAULT_CONFIG = {
     'toolbar2': '''
             visualblocks visualchars |
             charmap hr pagebreak nonbreaking anchor |  code |
+            formatselect
             ''',
     'contextmenu': 'formats | link image',
     'menubar': True,
