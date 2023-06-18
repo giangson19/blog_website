@@ -20,10 +20,10 @@ from blog import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.AllPostsList.as_view(), name = 'home'),
+    path('', views.LatestPostsList.as_view(), name = 'home'),
     path('about/', views.About.as_view(), name = 'about'),    
     path('blog/', include('blog.urls')),    
-    path('summernote/', include('django_summernote.urls')),
+    # path('summernote/', include('django_summernote.urls')),
     path('tinymce/', include('tinymce.urls')),
 ]
 
