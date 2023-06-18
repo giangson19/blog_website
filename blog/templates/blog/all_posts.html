@@ -1,37 +1,29 @@
 {% extends "blog/base.html" %}
 
+{% block title %} Giang Son's Blog {% endblock title %}
+
 {% block content %}
 
-    {% load static %}
-    <header class="masthead" style="background-image:url({% static 'blog/assets/img/home-bg.jpg' %});">
-        <div class="overlay"></div>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-10 col-lg-8 mx-auto position-relative">
-                    <div class="site-heading">
-                        <h1>Giang Son</h1>
-                        <span class="subheading">‎ ‎ </span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-10 col-lg-8">
-                
-                {% for post in post_list %}
-                    <div class="post-preview"><a href="{% url 'post_detail' post.slug  %}">
-                            <h2 class="post-title">{{ post.title }}</h2>
-                            <!-- <h3 class="post-subtitle">Problems look mighty small from 150 miles up</h3> -->
-                        </a>
-                        <p class="post-meta">Posted by&nbsp;<a href="{% url 'post_detail' post.slug  %}">{{ post.author.first_name }}  on {{ post.created_on | date }}</a></p>
-                    </div>
-                    <hr>
-                {% endfor %}
-                <div class="clearfix"><a href = "{% url 'home' %}"><button class="btn btn-primary float-end" type="button">&nbsp;⇐ Return Home</button></a></div>
-            </div>
+<div class="container" id="post-list">
+    <hr>
+    <div class="row">
+        <div class="col-xxl-8" style="padding-top: 40px;padding-left: 42px;padding-right: 30px;">
+            
+            {%include 'blog/post_list.html' %}
+
+            <nav>
+                <ul class="pagination">
+                    <li class="page-item"><a class="page-link" aria-label="Previous" href="#"><span aria-hidden="true">«</span></a></li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item"><a class="page-link" href="#">4</a></li>
+                    <li class="page-item"><a class="page-link" href="#">5</a></li>
+                    <li class="page-item"><a class="page-link" aria-label="Next" href="#"><span aria-hidden="true">»</span></a></li>
+                </ul>
+            </nav>
         </div>
     </div>
+</div>
     {%endblock%}
 

@@ -1,66 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Giang Son {% block title %}{% endblock title %}</title>
-
+    <title>{% block title %} {% endblock title %} </title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'blog/assets/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'blog/assets/css/Hero-Clean-images.css' %}">
+    <link rel="stylesheet" href="{% static 'blog/assets/css/Navbar-Right-Links-icons.css' %}">
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic&amp;display=swap">
 
-    {% load static %}
-    <link rel="stylesheet" href="{% static 'blog/assets/fonts/font-awesome.min.css' %} ">
     {% comment %} for code block styling: {% endcomment %}
     <link rel="stylesheet" type="text/css" href="{% static 'blog/assets/bootstrap/css/prism.css' %} ">
     <script src="{% static 'blog/assets/bootstrap/js/prism.js' %} "></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/prism.min.js" integrity="sha512-UOoJElONeUNzQbbKQbjldDf9MwOHqxNz49NNJJ1d90yp+X9edsHyJoAs6O4K19CZGaIdjI5ohK+O2y5lBTW6uQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/components/prism-css.min.js" integrity="sha512-mHqYW9rlMztkE8WFB6wIPNWOVtQO50GYBsBRMyA1CMk34zLJ6BrvVy3RVHoIIofugmnoNLGxkuePQ9VT2a3u8w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 
+{% comment %} navebar: {% endcomment %}
+{%include 'blog/navbar.html'%}
+
 <body>
-    <nav class="navbar navbar-light navbar-expand-lg fixed-top" id="mainNav">
-        <div class="container"><a class="navbar-brand" href="{% url 'home' %}">Giang Son</a><button data-bs-toggle="collapse" data-bs-target="#navbarResponsive" class="navbar-toggler" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars"></i></button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="{% url 'home' %}">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{% url 'about' %}">About Me</a></li>
-                    <!-- <li class="nav-item"><a class="nav-link" href="contact.html">Contact Me</a></li> -->
-                    <!-- <li class="nav-item"><a class="nav-link" href="post.html">Blog Post</a></li> -->
-                </ul>
-            </div>
-        </div>
-    </nav>
+    <div class="col-auto mx-auto">
 
+        {% block content %}
+        <!-- Content Goes here -->
+        {% endblock content %}
 
-    
-    {% block content %}
-    <!-- Content Goes here -->
-    {% endblock content %}
+    {% comment %} footer {% endcomment %}
+    {% include 'blog/footer.html' %}
 
+    </div>
 
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-10 col-lg-8 mx-auto">
-                    <ul class="list-inline text-center">
-                        <li class="list-inline-item"><span class="fa-stack fa-lg"><a href = 'https://www.linkedin.com/in/nguyengiangson/' target = '_blank'><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-linkedin fa-stack-1x fa-inverse"></i></a></span></li>
-                        <li class="list-inline-item"><span class="fa-stack fa-lg"><a href = 'https://facebook.com/mrleopesvn' target = '_blank'><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-facebook fa-stack-1x fa-inverse"></i></a></span></li>
-                        <li class="list-inline-item"><span class="fa-stack fa-lg"><a href = 'https://github.com/giangson19' target = '_blank'><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-github fa-stack-1x fa-inverse"></i></a></span></li>
-                    </ul>
-                    <p class="text-muted copyright">Copyright&nbsp;©&nbsp;Giang Son  2023</p>
-                </div>
-            </div>
-        </div>
-
-    </footer>
     {% load static %}
     <script src="{% static 'blog/assets/bootstrap/js/bootstrap.min.js'%}"></script>
-    {% load static %}
-    <script src="{% static 'blog/assets/js/clean-blog.js' %}"></script>
 </body>
 
 </html>

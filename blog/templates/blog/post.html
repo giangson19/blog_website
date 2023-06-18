@@ -1,30 +1,27 @@
 {% extends 'blog/base.html' %} 
-{% block title %} | {{ object.title }} {% endblock title %}
+
+{% block title %} {{ object.title }} {% endblock title %}
+
 {% block content %}
     
-    {% load static %}
-    <header class="masthead" style="background-image:url({% static 'blog/assets/img/post-bg.jpg' %});">
-        <div class="overlay"></div>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-10 col-lg-8 mx-auto position-relative">
-                    <div class="post-heading">
-                        <h1>{{ object.title }}</h1>
-                        <!--<h2 class="subheading">Problems look mighty small from 150 miles up</h2>  -->
-                            <span class="meta">Posted by&nbsp;{{ post.author.first_name }} on {{ post.created_on | date }}</span>
-                    </div>
-                </div>
+<div class="container" style="margin-bottom: 50px;margin-top: 30px;">
+    <article>
+        <div class="row" id="heading-group">
+            <div class="col" style="padding-top: 50px;margin-bottom: 30px;">
+                <h1 class="display-3"><strong><span style="color: rgb(0, 0, 0);">{{ post.title }}</span></strong><br></h1>
+                <p><em>Posted by</em>&nbsp;{{ post.author.first_name }} | {{ post.created_on | date }}</p>
+                <p class="lead"><span style="color: rgb(0, 0, 0);">{{ post.description }}</span><br></p>
             </div>
         </div>
-    </header>
-    <article>
-        <div class="container">
+        <hr>
+        <div class="col-xxl-10 offset-xxl-1" id="content">
             <div class="row">
-                <div class="col-md-10 col-lg-8 mx-auto">
-                    {{ object.content | safe }}
+                <div class="col" style="margin-top: 20px;">
+                    {{ post.content | safe }}
                 </div>
             </div>
         </div>
     </article>
+</div>
 
 {% endblock content %}
