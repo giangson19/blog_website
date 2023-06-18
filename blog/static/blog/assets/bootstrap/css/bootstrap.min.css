@@ -300,11 +300,7 @@ pre {
     margin-top: 0;
     margin-bottom: 1rem;
     overflow: auto;
-    font-size: 0.875em;
-    /* padding: 15px;
-    border: 1px solid #666;
-    background: #f4f4f4;
-    color: var(--primary); */
+    font-size: 0.875em
 }
 
 pre code {
