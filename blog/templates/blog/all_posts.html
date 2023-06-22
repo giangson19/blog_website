@@ -6,22 +6,12 @@
 
 <div class="container" id="post-list">
     <hr>
+    <h3>ALL POSTS</h3>
     <div class="row">
         <div class="col-xxl-8" style="padding-top: 40px;padding-left: 42px;padding-right: 30px;">
             
             {%include 'blog/post_list.html' %}
-
-            <nav>
-                <ul class="pagination">
-                    <li class="page-item"><a class="page-link" aria-label="Previous" href="#"><span aria-hidden="true">«</span></a></li>
-                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                    <li class="page-item"><a class="page-link" href="#">4</a></li>
-                    <li class="page-item"><a class="page-link" href="#">5</a></li>
-                    <li class="page-item"><a class="page-link" aria-label="Next" href="#"><span aria-hidden="true">»</span></a></li>
-                </ul>
-            </nav>
+            {%include 'blog/pagination.html' %}
         </div>
     </div>
 </div>

@@ -13,6 +13,7 @@ class LatestPostsList(generic.ListView):
 class AllPostsList(generic.ListView):
     queryset = Post.objects.filter(status = 1).order_by('-created_on')
     template_name = 'blog/all_posts.html'
+    paginate_by = 5
 
 class PostDetail(generic.DetailView):
     model = Post
