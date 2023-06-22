@@ -39,7 +39,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'blog',
-    'django_summernote',
     'tinymce',
     'django.contrib.postgres',
 ]
@@ -133,7 +132,7 @@ MEDIA_URL = 'media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
-SUMMERNOTE_THEME = 'bs4'
+
 
 TINYMCE_DEFAULT_CONFIG = {
     'cleanup_on_startup': True,
