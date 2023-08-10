@@ -27,9 +27,11 @@ with open(os.path.join(BASE_DIR,'secret.json')) as f:
     secrets = json.load(f)
     SECRET_KEY = secrets['django_secret_key']
     DATABASE_URL = secrets['DATABASE_URL']
+    ENVIROMENT = secrets['environment']
+    DEFAULT_DB = secrets['default_db']
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = True if ENVIROMENT == 'dev' else False
 
 ALLOWED_HOSTS = ['192.168.1.172', 'giangson.pythonanywhere.com', '127.0.0.1']
 
@@ -81,15 +83,24 @@ WSGI_APPLICATION = 'blog_website.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
-
-DATABASES = {
-    'default': dj_database_url.config(
-        default=DATABASE_URL,
-        conn_max_age=600,
-        conn_health_checks=True,
-    ),
+list_db = {
+    'neon_postgres': {
+        'default': dj_database_url.config(
+            default=DATABASE_URL,
+            conn_max_age=600,
+            conn_health_checks=True,
+        ),
+    },
+    
+    'sqlite': {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
+    }
 }
 
+DATABASES = list_db[DEFAULT_DB]
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
