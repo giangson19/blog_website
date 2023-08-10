@@ -23,7 +23,7 @@ TEMPLATES_DIRS = os.path.join(BASE_DIR,'templates')
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-with open('secret.json') as f:
+with open(os.path.join(BASE_DIR,'secret.json')) as f:
     secrets = json.load(f)
     SECRET_KEY = secrets['django_secret_key']
     DATABASE_URL = secrets['DATABASE_URL']
@@ -31,7 +31,7 @@ with open('secret.json') as f:
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['192.168.1.172']
+ALLOWED_HOSTS = ['192.168.1.172', 'giangson.pythonanywhere.com', '127.0.0.1']
 
 
 # Application definition
