@@ -4,12 +4,11 @@
 
 {% block content %}
 
-<div class="container" id="post-list">
+<div class="container">
     <hr>
     <h3>ALL POSTS</h3>
     <div class="row">
-        <div class="col-xxl-8" style="padding-top: 40px;padding-left: 42px;padding-right: 30px;">
-            
+        <div class = "post_list" id = 'all_posts'>
             {%include 'blog/post_list.html' %}
             {%include 'blog/nav/pagination.html' %}
         </div>
