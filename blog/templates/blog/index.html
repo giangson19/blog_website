@@ -18,11 +18,12 @@
         </div>
     </div>
 
-    <div class="container" id="post-list">
+    <div class="container">
         <hr>
         <h4>RECENT POSTS</h4>
         <div class="row">
-            <div class="col-xxl-8" style="padding-top: 40px;padding-left: 42px;padding-right: 30px;">
+            {% comment %} <div style="padding-top: 40px;padding-left: 42px;"  id="post-list"> {% endcomment %}
+            <div class="post-list" id = 'recent_posts'>
 
             {%include 'blog/post_list.html' %}
 
