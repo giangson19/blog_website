@@ -1,3 +1,7 @@
 article #content p {
     font-size: 18px;
 }
+div .post_list {
+    padding-top: 40px;
+    padding-left: 42px;
+}
