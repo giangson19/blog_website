@@ -2,7 +2,7 @@
     <div>
         <a class="link-dark" href="{% url 'post_detail' post.slug  %}">
             <h1><span style="color: rgb(0, 0, 0);">{{ post.title }}</span><br></h1>
-            <p><em>Posted by</em>&nbsp;{{ post.author.first_name }} | {{ post.created_on | date }}</p>
+            <p><em>Posted by</em>&nbsp;{{ post.author.first_name }} | {{ post.created_on | date:"M d, Y" }}</p>
         </a>
         <p class="lead">{{ post.description }}<br></p>
         <hr>
