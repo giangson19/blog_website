@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from tinymce.models import HTMLField
+from django.core.exceptions import ValidationError
 
 STATUS = (
     (0,"Draft"),
@@ -23,3 +24,17 @@ class Post(models.Model):
         
     def __str__(self):
             return self.title
+        
+class About(models.Model):
+    title = models.CharField(max_length=200, unique=True)
+    content = HTMLField()
+    
+    def save(self, *args, **kwargs):
+        if not self.pk and About.objects.exists():
+        # if you'll not check for self.pk 
+        # then error will also be raised in the update of exists model
+            raise ValidationError('There is can be only one JuicerBaseSettings instance')
+        return super(About, self).save(*args, **kwargs)
+    
+    def __str__(self):
+        return self.title
