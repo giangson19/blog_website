@@ -38,7 +38,7 @@ except:
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True if ENVIROMENT == 'dev' else False
 
-ALLOWED_HOSTS = ['192.168.1.172', 'giangson.pythonanywhere.com', '127.0.0.1', 'giangson.up.railway.app']
+ALLOWED_HOSTS = ['192.168.1.172', 'giangson.pythonanywhere.com', '127.0.0.1', 'giangson.up.railway.app', 'giangson.me']
 
 
 # Application definition
@@ -213,4 +213,4 @@ TINYMCE_DEFAULT_CONFIG = {
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-CSRF_TRUSTED_ORIGINS = ['https://giangson.up.railway.app']
+CSRF_TRUSTED_ORIGINS = ['https://giangson.up.railway.app', 'https://giangson.me']
