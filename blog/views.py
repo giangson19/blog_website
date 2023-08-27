@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Post
+from .models import Post, About
 from django.views import generic
 
 # Create your views here.
@@ -19,6 +19,9 @@ class PostDetail(generic.DetailView):
     model = Post
     template_name = 'blog/post.html'
 
-class About(generic.TemplateView):
+class About(generic.DetailView):
+    model = About
     template_name = 'blog/about.html'
     
+    def get_object(self):
+        return self.model.objects.get(pk=1)
