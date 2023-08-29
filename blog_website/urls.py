@@ -22,6 +22,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.LatestPostsList.as_view(), name = 'home'),
     path('about/', views.About.as_view(), name = 'about'),    
+    path('me/', views.About.as_view()),    
     path('blog/', include('blog.urls')),    
     # path('summernote/', include('django_summernote.urls')),
     path('tinymce/', include('tinymce.urls')),
