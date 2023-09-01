@@ -9,7 +9,7 @@
         <div class="row" id="heading-group">
             <div class="col" style="padding-top: 50px;margin-bottom: 30px;">
                 <h1><strong><span style="color: rgb(0, 0, 0);">{{ post.title }}</span></strong><br></h1>
-                <p><em>Posted by</em>&nbsp;{{ post.author.first_name }} | {{ post.created_on | date:"M d, Y" }}</p>
+                <p><em>Posted by</em>&nbsp;{{ post.author.first_name }} | {{ post.created_on | date:"M d, Y" }} | {{ post.get_readtime }} </p>
                 <p class="lead"><span style="color: rgb(0, 0, 0);">{{ post.description }}</span><br></p>
             </div>
         </div>
