@@ -23,6 +23,15 @@
             <hr>  <p> Thank you for reading. I've also written  <a href="{% url 'all_posts' %}">some other posts that you can check out</a>. </p>
         </div>
     </article>
+<!-- COMMENTS  -->
+     {% comment %} <hr>
+    <div id="comments_section">
+        
+        {% include 'blog/comment.html' %}
+        {% include 'blog/comment_form.html' %}
+
+
+    </div>  {% endcomment %}
 </div>
 
 {% endblock content %}
