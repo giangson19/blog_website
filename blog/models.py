@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from tinymce.models import HTMLField
 from django.core.exceptions import ValidationError
+import readtime
 
 STATUS = (
     (0,"Draft"),
@@ -20,8 +21,11 @@ class Post(models.Model):
     
     class Meta:
         ordering = ['-created_on']
-        
-        
+    
+    def get_readtime(self):
+        result = readtime.of_html(self.content)
+        return result.text + ' read'
+    
     def __str__(self):
             return self.title
         
