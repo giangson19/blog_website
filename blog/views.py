@@ -25,3 +25,6 @@ class About(generic.DetailView):
     
     def get_object(self):
         return self.model.objects.get(pk=1)
+    
+def Schedule(request): 
+    return render(request, 'blog/schedule.html')
