@@ -38,7 +38,7 @@ except:
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True if ENVIROMENT == 'dev' else False
 
-ALLOWED_HOSTS = ['192.168.1.172', 'giangson.pythonanywhere.com', '127.0.0.1', 'giangson.up.railway.app', 'giangson.me', 'giangson-blog-website.onrender.com/']
+ALLOWED_HOSTS = ['192.168.1.172', 'giangson.pythonanywhere.com', '127.0.0.1', 'giangson.up.railway.app', 'giangson.me', 'giangson-blog-website.onrender.com']
 
 # Application definition
 
