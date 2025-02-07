@@ -20,9 +20,14 @@
                     {{ post.content | safe }}
                 </div>
             </div>
-            <hr>  <p> Thank you for reading. I've also written  <a href="{% url 'all_posts' %}">some other posts that you can check out</a>. </p>
         </div>
     </article>
+    
+    <div id="comments_section">
+        {% include 'blog/comment_disqus.html' with slug=object.slug%}
+    </div> 
+    <hr>  <p> Thank you for reading. I've also written  <a href="{% url 'all_posts' %}">some other posts that you can check out</a>. </p>
+
 </div>
 
 {% endblock content %}

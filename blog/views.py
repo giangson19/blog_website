@@ -1,6 +1,8 @@
 from django.shortcuts import render
-from .models import Post, About
+from .models import Post, About, Comment
 from django.views import generic
+from .forms import CommentForm
+
 
 # Create your views here.
 # def home(request):
@@ -18,6 +20,26 @@ class AllPostsList(generic.ListView):
 class PostDetail(generic.DetailView):
     model = Post
     template_name = 'blog/post.html'
+    
+    def get_context_data(self, **kwargs):
+        data = super().get_context_data(**kwargs)
+
+        comments = Comment.objects.filter(
+            post=self.get_object()).order_by('-created')
+        data['comments'] = comments
+        # if self.request.user.is_authenticated:
+        data['comment_form'] = CommentForm()
+
+        return data
+
+    def post(self, request, *args, **kwargs):
+        new_comment = Comment(body=request.POST.get('body'),
+                                  name=request.POST.get('name'),
+                                
+                                  post=self.get_object())
+        new_comment.save()
+        return self.get(self, request, *args, **kwargs)
+
 
 class About(generic.DetailView):
     model = About

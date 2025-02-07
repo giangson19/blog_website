@@ -19,3 +19,16 @@ div .post_list {
     padding-top: 40px;
     padding-left: 42px;
 }
+
+article #content {
+    font-size: 18px;
+}
+
+
+#comment_body { 
+    background: #f9f9f9;
+    border-left: 0.3rem solid #ccc;
+    margin: 1.5em;
+    padding: 0.5em;
+    font-size: 18px;
+}

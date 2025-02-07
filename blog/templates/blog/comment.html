@@ -1,0 +1,40 @@
+{% comment %} {% if comments %}
+<strong class="text-secondary">{{ object.number_of_comments }} Comment{{ object.number_of_comments|pluralize }}</strong>
+<hr>
+<ul>
+  {% for comment in comments %}
+  <li>           
+   <div>
+      <span>
+        <strong class="text-info">{{ comment.name }} </strong>
+        <small class="text-muted">{{ comment.created }}</small>
+      </span>
+      <p>
+        {{ comment.body|safe }}
+      </p>
+    </div>
+  </li>
+  {% endfor %}
+</ul>
+{% else %}
+  <strong class="text-secondary">No comments yet...</strong>
+{% endif %} {% endcomment %}
+
+
+{% comment %} <div style="margin-bottom: 5vh;"> {% endcomment %}
+  <div style = 'padding-top: 1rem'>
+  {% for comment in comments%}
+      <div class="col-xl-12 d-flex align-items-center" style="padding-left: 23px;">
+          <h5 style="padding-bottom: 0px;margin-bottom: 4px;">{{ comment.name }}</h5>
+          <span style="padding-left: 12px;color: #697077;">{{ comment.created | date:"Y-m-d H:i" }}</span>
+      </div>
+      <div id = "comment_body" style="padding-left: 24px;">
+          <p class="text-break text-start">{{ comment.body }}</p>
+      </div>
+              {% endfor %}
+        </div>
+
+{% comment %} </div> {% endcomment %}
+
+{% comment %} {% empty %}
+<p>There are no comments.</p> {% endcomment %}
