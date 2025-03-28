@@ -1,5 +1,6 @@
-from django.shortcuts import render
-from .models import Post, About, Comment
+from django.shortcuts import render, redirect
+from django.contrib import messages
+from .models import Post, About, Comment, Subscriber
 from django.views import generic
 from .forms import CommentForm
 
@@ -50,3 +51,17 @@ class About(generic.DetailView):
     
 def Schedule(request): 
     return render(request, 'blog/schedule.html')
+
+def subscribe(request):
+    if request.method == "POST":
+        email = request.POST.get("email")
+        subscriber, created = Subscriber.objects.get_or_create(email=email)
+
+        if not created and subscriber.is_active:
+            messages.warning(request, "You are already subscribed.")
+        else:
+            subscriber.is_active = True
+            subscriber.save()
+            messages.success(request, "Thank you for subscribing!")
+
+    return redirect(request.META.get('HTTP_REFERER', 'homepage'))

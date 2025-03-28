@@ -15,6 +15,8 @@
                     <h2 class="text-nowrap fw-bold"> Hello there! </h2>
                     <h3> <a href="{% url 'about' %}" class="link-secondary" style="color: rgb(107, 107, 107); text-decoration: none;"> My name is Son. I'm a data practitioner. </a></h3>
                     <p>  I write these posts for my selves: past, present, future.</p>
+                    {% include 'blog/button/subscribe.html' %}
+
                 </div>
             {% comment %} </div> {% endcomment %}
         </div>
@@ -29,7 +31,7 @@
 
             {%include 'blog/post_list.html' %}
 
-            <a class="btn btn-primary btn-lg border rounded-8" role="button" href="{% url 'all_posts' %} " style="background:#181C62;"><strong>All Posts</strong></a>
+            <a  class="btn btn-primary btn-lg border rounded-8" role="button" href="{% url 'all_posts' %} " style="background:#181C62;"><strong>All Posts</strong></a>  
 
             </div>
         </div>

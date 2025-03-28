@@ -1,0 +1,18 @@
+<div class="col-auto mx-auto">
+        
+    <form id="subscribe-form" method="post" action="{% url 'subscribe' %}" class="d-flex">
+        {% csrf_token %}
+        <input type="email" name="email" id="email-input" class="form-control me-2" placeholder="Enter email" required>
+        <button type="submit" class="btn btn-primary">Subscribe</button>
+    </form>
+    <div class="container mt-3">
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert {{ message.tags }} alert-dismissible fade show" role="alert">
+                    {{ message }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            {% endfor %}
+        {% endif %}
+    </div>
+</div>
