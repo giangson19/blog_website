@@ -1,6 +1,7 @@
 {% extends 'blog/base.html' %} 
 
 {% block title %} {{ object.title }} {% endblock title %}
+{% block metadescription %} <meta name="description" content="{{post.description}}"> {% endblock %}
 
 {% block content %}
     
