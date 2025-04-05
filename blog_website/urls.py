@@ -21,12 +21,14 @@ from blog import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.LatestPostsList.as_view(), name = 'home'),
-    path('about/', views.About.as_view(), name = 'about'),    
-    path('me/', views.About.as_view()),    
+    path('about/', views.AboutView.as_view(), name = 'about'),
+    path('me/', views.AboutView.as_view()),    
+    path('experience/', views.Experience.as_view(), name = 'experience'),    
     path('schedule/', views.Schedule, name = 'schedule'),    
     path('blog/', include('blog.urls')),    
     # path('summernote/', include('django_summernote.urls')),
     path('tinymce/', include('tinymce.urls')),
+    
 ]
 
 from django.conf import settings
