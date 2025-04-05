@@ -1,0 +1,24 @@
+{% extends "blog/base.html" %}
+
+{% block title %} My Experience {% endblock title %}
+
+
+{% block content %}
+<div class="container" style="margin-bottom: 50px;margin-top: 30px;">
+    <article>
+        <div class="row" id="heading-group">
+            <div class="col" style="padding-top: 50px;margin-bottom: 30px;">
+                <h1><strong><span style="color: rgb(0, 0, 0);">{{ about.title | safe }}</span></strong><br></h1>
+            </div>
+        </div>
+        <hr>
+        <div class="" id="content" align= "justify">
+            <div class="row">
+                <div class="col" style="margin-top: 20px;">
+                    {{ about.content | safe }}
+                </div>
+            </div>
+        </div>
+    </article>
+</div>
+{%endblock%}
