@@ -1,24 +1,69 @@
-{% extends "blog/base.html" %}
+{% comment %} {% extends "blog/base.html" %} {% endcomment %}
+<!DOCTYPE html>
+<html lang="en">
 
-{% block title %} My Experience {% endblock title %}
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title> My experience </title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'blog/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'blog/css/Hero-Clean-images.css' %}">
+    <link rel="stylesheet" href="{% static 'blog/css/Navbar-Right-Links-icons.css' %}">
+    <link rel="icon" href="{% static 'blog/img/favicon.png' %}" >
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic&amp;display=swap">
+
+    {% comment %} for code block styling: {% endcomment %}
+    <link rel="stylesheet" type="text/css" href="{% static 'blog/css/prism.css' %} ">
+    <link rel="stylesheet" type="text/css" href="{% static 'blog/css/article.css' %} ">
+
+    <script src="{% static 'blog/js/prism.js' %} "></script>
 
 
-{% block content %}
-<div class="container" style="margin-bottom: 50px;margin-top: 30px;">
-    <article>
-        <div class="row" id="heading-group">
-            <div class="col" style="padding-top: 50px;margin-bottom: 30px;">
-                <h1><strong><span style="color: rgb(0, 0, 0);">{{ about.title | safe }}</span></strong><br></h1>
-            </div>
-        </div>
-        <hr>
-        <div class="" id="content" align= "justify">
-            <div class="row">
-                <div class="col" style="margin-top: 20px;">
-                    {{ about.content | safe }}
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-58D674S64K"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-58D674S64K');
+    </script>
+</head>
+
+{% comment %} {% block title %} My Experience {% endblock title %} {% endcomment %}
+
+<body style="margin:auto; max-width:55rem">
+    <div class="col-auto mx-auto">
+
+        <div class="container" style="margin-bottom: 50px;margin-top: 30px;">
+            <article>
+                <div class="row" id="heading-group">
+                    <div class="col" style="padding-top: 50px;margin-bottom: 30px;">
+                        <h1><strong><span style="color: rgb(0, 0, 0);">{{ about.title | safe }}</span></strong><br></h1>
+                    </div>
                 </div>
-            </div>
+                <hr>
+                <div class="" id="content" align= "justify">
+                    <div class="row">
+                        <div class="col" style="margin-top: 20px;">
+                            {{ about.content | safe }}
+                        </div>
+                    </div>
+                </div>
+            </article>
         </div>
-    </article>
-</div>
-{%endblock%}
+
+    {% comment %} footer {% endcomment %}
+    {% include 'blog/nav/footer.html' %}
+
+    </div>
+
+    {% load static %}
+    <script src="{% static 'blog/bootstrap/js/bootstrap.min.js'%}"></script>
+
+
+</body>
