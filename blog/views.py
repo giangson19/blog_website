@@ -41,12 +41,19 @@ class PostDetail(generic.DetailView):
         return self.get(self, request, *args, **kwargs)
 
 
-class About(generic.DetailView):
+class AboutView(generic.DetailView):
     model = About
     template_name = 'blog/about.html'
     
     def get_object(self):
         return self.model.objects.get(pk=1)
+    
+class Experience(generic.DetailView):
+    model = About
+    template_name = 'blog/experience.html'
+    
+    def get_object(self):
+        return self.model.objects.get(pk=2)
     
 def Schedule(request): 
     return render(request, 'blog/schedule.html')
