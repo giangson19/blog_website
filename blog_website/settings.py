@@ -213,3 +213,5 @@ TINYMCE_DEFAULT_CONFIG = {
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 CSRF_TRUSTED_ORIGINS = ['https://giangson.up.railway.app', 'https://giangson.me']
+
+SECURE_REFERRER_POLICY = "no-referrer-when-downgrade"
