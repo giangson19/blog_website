@@ -23,7 +23,7 @@ urlpatterns = [
     path('', views.LatestPostsList.as_view(), name = 'home'),
     path('about/', views.AboutView.as_view(), name = 'about'),
     path('me/', views.AboutView.as_view()),    
-    path('experience/', views.Experience.as_view(), name = 'experience'),    
+    # path('experience/', views.Experience.as_view(), name = 'experience'),    
     path('schedule/', views.Schedule, name = 'schedule'),    
     path('blog/', include('blog.urls')),    
     # path('summernote/', include('django_summernote.urls')),
