@@ -11,12 +11,23 @@ from .forms import CommentForm
 class LatestPostsList(generic.ListView):
     queryset = Post.objects.filter(status = 1).order_by('-created_on')[:5]
     template_name = 'blog/index.html'
+    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        # Get total count of published posts
+        context['post_count'] = Post.objects.filter(status = 1).count()
+        return context
 
 class AllPostsList(generic.ListView):
     queryset = Post.objects.filter(status = 1).order_by('-created_on')
     template_name = 'blog/all_posts.html'
-    paginate_by = 5
-
+    # paginate_by = 5
+    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['post_count'] = self.queryset.count()
+        return context
+    
 class PostDetail(generic.DetailView):
     model = Post
     template_name = 'blog/post.html'
