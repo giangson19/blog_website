@@ -4,16 +4,16 @@
 
 {% block content %}
     <div class="container py-4 py-xl-5">
-        {% comment %} <div class="row gy-4 gy-md-0" style="padding-top: 0px;"> {% endcomment %}
-            {% comment %} <div class="col-md-6"> {% endcomment %}
-                {% comment %} {% load static %} {% endcomment %}
-                {% comment %} <div class="p-xl-5 m-xl-5"><img class="rounded img-fluid w-100 fit-cover" src="{% static 'blog//img/profile-img.jpeg' %}" style="min-height: 300px;"></div> {% endcomment %}
-            {% comment %} </div> {% endcomment %}
-            {% comment %} <div class="col-md-6 d-md-flex align-items-md-center"> {% endcomment %}
-                {% comment %} <div style="max-width: 350px;"> {% endcomment %}
+        <div class="row gy-4 gy-md-0" style="padding-top: 0px;">
+            <div class="col-md-6">
+                {% load static %}
+                <div class="p-xl-5"><img class="rounded img-fluid w-100 fit-cover" src="{% static 'blog//img/profile-img.jpeg' %}"></div>
+            </div>
+            <div class="col-md-6 d-md-flex align-items-md-center">
+                <div style="max-width: 300px;">
                 <div>
-                    <h2 class="text-nowrap fw-bold"> Hello there! </h2>
-                    <h3> <a href="{% url 'about' %}" class="link-secondary" style="color: rgb(107, 107, 107); text-decoration: none;"> My name is Son. I practice data science.</a></h3>
+                    <h2 class="text-nowrap fw-bold"> Well hello there 👋 </h2>
+                    <h4> <a href="{% url 'about' %}" class="link-secondary" style="color: rgb(107, 107, 107)"> My name is Son.<br> I practice data science 📊.</a></h4>
                     <p>  I write these posts for my selves: past, present, future.</p>
                 </div>
             {% comment %} </div> {% endcomment %}
@@ -29,7 +29,7 @@
 
             {%include 'blog/post_list.html' %}
 
-            <a class="btn btn-primary btn-lg border rounded-8" role="button" href="{% url 'all_posts' %} " style="background:#181C62;"><strong>All Posts</strong></a>
+            <a class="btn btn-primary btn-lg border rounded-8" role="button" href="{% url 'all_posts' %} " style="background:#181C62;"><strong>See all {{ post_count }} posts</strong></a>
 
             </div>
         </div>
